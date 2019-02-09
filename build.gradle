@@ -10,11 +10,10 @@ ext {
     drivers = ["chrome", "chromeHeadless"]
 
     ext {
-        groovyVersion = '2.4.12'
-        gebVersion = '2.3'
-        seleniumVersion = '3.6.0'
-        chromeDriverVersion = '2.32'
-        geckoDriverVersion = '0.18.0'
+        groovyVersion = '2.5.6'
+        gebVersion = '2.3.1'
+        seleniumVersion = '3.141.59'
+        chromeDriverVersion = '2.41'
     }
 }
 
@@ -24,7 +23,7 @@ repositories {
 
 dependencies {
     testCompile "org.gebish:geb-spock:$gebVersion"
-    testCompile("org.spockframework:spock-core:1.1-groovy-2.4") {
+    testCompile("org.spockframework:spock-core:1.2-groovy-2.5") {
         exclude group: "org.codehaus.groovy"
     }
     testCompile "org.codehaus.groovy:groovy-all:$groovyVersion"
