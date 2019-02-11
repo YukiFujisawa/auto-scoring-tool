@@ -6,17 +6,12 @@ plugins {
 }
 
 ext {
-    // The drivers we want to use
-    // drivers = ["chrome", "chromeGui"]
-    drivers = ["chrome"]
-
-    ext {
-        groovyVersion = '2.5.6'
-        gebVersion = '2.3.1'
-        seleniumVersion = '3.141.59'
-        chromeDriverVersion = '2.41'
-    }
+    groovyVersion = '2.5.6'
+    gebVersion = '2.3.1'
+    seleniumVersion = '3.141.59'
+    chromeDriverVersion = '2.41'
 }
+
 
 repositories {
     mavenCentral()
