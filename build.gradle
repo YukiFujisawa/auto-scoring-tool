@@ -32,26 +32,27 @@ dependencies {
 
     // Drivers
     testCompile "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    testCompile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+
+    // https://mvnrepository.com/artifact/com.athaydes/spock-reports
+    testCompile group: 'com.athaydes', name: 'spock-reports', version: '1.6.1'
+
 }
 
 webdriverBinaries {
     chromedriver chromeDriverVersion
 }
 
-drivers.each { driver ->
-    task "${driver}Test"(type: Test) {
-        group JavaBasePlugin.VERIFICATION_GROUP
-
-        outputs.upToDateWhen { false }  // Always run tests
-
-        systemProperty "geb.build.reportsDir", reporting.file("geb/$name")
-        systemProperty "geb.env", driver
-    }
-}
-
 test {
-    dependsOn drivers.collect { tasks["${it}Test"] }
-    enabled = false
+    group JavaBasePlugin.VERIFICATION_GROUP
+    outputs.upToDateWhen { false }  // Always run tests
+    systemProperty "geb.build.reportsDir", reporting.file("geb/$name")
+    systemProperty "geb.env", project.site
 }
 
 tasks.withType(Test) {

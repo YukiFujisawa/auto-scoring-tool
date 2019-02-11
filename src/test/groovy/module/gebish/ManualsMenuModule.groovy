@@ -1,3 +1,5 @@
+package module.gebish
+
 import geb.Module
 
 class ManualsMenuModule extends Module {

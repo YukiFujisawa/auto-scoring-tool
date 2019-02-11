@@ -1,3 +1,5 @@
+package page.gebish
+
 import geb.Page
 
 class TheBookOfGebPage extends Page {

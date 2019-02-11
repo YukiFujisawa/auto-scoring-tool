@@ -1,4 +1,8 @@
+package spec.gebish
+
 import geb.spock.GebSpec
+import page.gebish.GebishOrgHomePage
+import page.gebish.TheBookOfGebPage
 
 class GebishOrgSpec extends GebSpec {
 
