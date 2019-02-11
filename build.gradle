@@ -6,10 +6,12 @@ plugins {
 }
 
 ext {
-    groovyVersion = '2.5.6'
-    gebVersion = '2.3.1'
-    seleniumVersion = '3.141.59'
-    chromeDriverVersion = '2.41'
+    ext {
+        groovyVersion = '2.5.6'
+        gebVersion = '2.3.1'
+        seleniumVersion = '3.141.59'
+        chromeDriverVersion = '2.41'
+    }
 }
 
 

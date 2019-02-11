@@ -6,19 +6,6 @@
 
 ## Usage
 
-Mac, Linuxの場合
-
 ```bash
-$ ./gradlew test
+$ ./gradlew test --tests suite.GebishSuite -Psite=Gebish
 ```
-
-windosの場合
-
-```bash
-$ ./gradlew.bat
-```
-
-## commit comment
-
-see
-https://gist.github.com/parmentf/035de27d6ed1dce0b36a
