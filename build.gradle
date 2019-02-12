@@ -50,6 +50,9 @@ test {
     outputs.upToDateWhen { false }  // Always run tests
     systemProperty "geb.build.reportsDir", reporting.file("geb/$name")
     systemProperty "geb.env", project.site
+    testLogging {
+        events 'standard_out', 'standard_error'
+    }
 }
 
 tasks.withType(Test) {
