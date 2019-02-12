@@ -19,7 +19,7 @@ class FacelookBasicSpec extends GebReportingSpec {
     to FacelookTopPage
 
     when: "トップページ：ログインリンクをクリックした場合"
-    headerMenu.loginLink.click()
+    headerMenu.signUpLink.click()
 
     then: "新規会員登録ページに遷移すること"
     waitFor { at FacelookUsersNewPage }
