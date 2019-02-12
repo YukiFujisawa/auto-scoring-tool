@@ -5,9 +5,9 @@ import module.gebish.ManualsMenuModule
 
 class GebishOrgHomePage extends Page {
 
-    static at = { title == "Geb - Very Groovy Browser Automation" }
+  static at = { title == "Geb - Very Groovy Browser Automation" }
 
-    static content = {
-        manualsMenu { module(ManualsMenuModule) }
-    }
+  static content = {
+    manualsMenu { module(ManualsMenuModule) }
+  }
 }

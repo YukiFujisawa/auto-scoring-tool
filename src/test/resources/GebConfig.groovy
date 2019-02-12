@@ -15,6 +15,12 @@ driver = {
     new ChromeDriver()
     // new ChromeDriver(new ChromeOptions().addArguments('headless'))
 }
+
+baseUrl = "http://0.0.0.0:3000"
+reportsDir = "build/reports"
+
+reportOnTestFailureOnly = true
+
 environments {
     Facelook {
         baseUrl = "http://0.0.0.0:3000"
