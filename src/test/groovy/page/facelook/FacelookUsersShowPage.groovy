@@ -6,8 +6,7 @@ import model.User
 class FacelookUsersShowPage extends Page {
   static url = "/users/\\d+"
   static at = { title == "users_show" }
-
-  String convertToPath(User user) {
-    "/${manual.version}/index.html"
+  static content = {
+    userValue { name -> $("p", text: contains(name)) }
   }
 }

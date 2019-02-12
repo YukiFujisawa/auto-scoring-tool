@@ -14,4 +14,5 @@ $ brew install groovy
 
 ```bash
 $ ./gradlew test --tests suite.GebishSuite -Psite=Gebish
+$ ./gradlew test --tests suite.FacelookSuite -Psite=Facelook
 ```

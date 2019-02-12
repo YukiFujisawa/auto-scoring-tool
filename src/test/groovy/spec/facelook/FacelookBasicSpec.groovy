@@ -2,32 +2,37 @@ package spec.facelook
 
 import fixture.factory.UserFactory
 import geb.spock.GebReportingSpec
-import helper.GebDebugUtil
 import model.User
 import page.facelook.FacelookTopPage
 import page.facelook.FacelookUsersNewPage
 import page.facelook.FacelookUsersShowPage
+import spock.lang.Stepwise
 
+@Stepwise
 class FacelookBasicSpec extends GebReportingSpec {
 
-  def "Basic case"() {
+  def "会員登録のテスト"() {
     setup:
     User userDefault = UserFactory.create()
 
-    expect: "トップ画面から開始"
+    expect: "テスト開始"
     to FacelookTopPage
 
-    when: "ログインリンクをクリックした場合"
+    when: "トップページ：ログインリンクをクリックした場合"
     headerMenu.loginLink.click()
 
-    then: "ユーザー新規ページに遷移すること"
+    then: "新規会員登録ページに遷移すること"
     waitFor { at FacelookUsersNewPage }
 
-    when:
+    when: "新規会員登録ページ：登録フォームに入力＆送信した場合"
     inputForm(userDefault)
     submitButton.click()
 
-    then:
+    then: "会員詳細ページに遷移すること"
     waitFor { at FacelookUsersShowPage }
+
+    and: "入力した情報が表示されていること"
+    !userValue(userDefault.userName).isEmpty()
+    !userValue(userDefault.mail).isEmpty()
   }
 }

@@ -12,8 +12,8 @@ class UserFactory {
 
   static private createDefault() {
     return new User(
-        userName: "test_user_default",
-        mail: "test_user_default@exmple.com",
+        userName: "user_name_default",
+        mail: "user_mail_default@exmple.com",
         password: "password",
         passwordConfirm: "password"
     )
