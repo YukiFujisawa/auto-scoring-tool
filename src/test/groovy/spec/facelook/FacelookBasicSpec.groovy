@@ -33,6 +33,6 @@ class FacelookBasicSpec extends GebReportingSpec {
 
     and: "入力した情報が表示されていること"
     !userValue(userDefault.userName).isEmpty()
-    !userValue(userDefault.mail).isEmpty()
+    !userValue(userDefault.email).isEmpty()
   }
 }

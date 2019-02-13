@@ -1,7 +1,6 @@
 package page.facelook
 
 import geb.Page
-import geb.module.TextInput
 import model.User
 import module.facelook.FacelookHeaderMenuModule
 
@@ -21,7 +20,7 @@ class FacelookUsersNewPage extends Page {
 
   void inputForm(User user) {
     userNameInput = user.userName
-    emailInput = user.mail
+    emailInput = user.email
     passwordInput = user.password
     passwordConfirmInput = user.passwordConfirm
   }

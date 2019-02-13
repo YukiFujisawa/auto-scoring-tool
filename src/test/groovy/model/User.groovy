@@ -2,7 +2,7 @@ package model
 
 class User {
   String userName
-  String mail
+  String email
   String password
   String passwordConfirm
 }
