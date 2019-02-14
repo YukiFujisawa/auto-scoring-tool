@@ -25,6 +25,10 @@ environments {
     Facelook {
         baseUrl = "http://0.0.0.0:3000"
     }
+    FacelookJenkins {
+        driver = { new ChromeDriver(new ChromeOptions().addArguments('headless')) }
+        baseUrl = "http://host.docker.internal:3000"
+    }
     Gebish {
         baseUrl = "http://gebish.org"
     }
