@@ -11,34 +11,55 @@
 https://hub.docker.com/editions/community/docker-ce-desktop-mac
 
 ```bash
-$ docker-compose up -d
-$ docker exec -it -u root jenkins bash
-$ apt-get update
-$ apt-get install build-essential
-$ apt-get install -y libreadline-dev
-
+$ brew install groovy
+$ brew cask install chromedriver
+$ brew install jenkins
 ```
 
+* Jenkins起動
+
 ```bash
-$ brew install groovy
+$ brew services start jenkins
+```
+
+http://localhost:8080/
+
+* Jenkinsテストjob作成
+
+```bash:
+#!/bin/bash
+source ~/.bash_profile
+
+git clone https://$USER_NAME:$PASSWORD@github.com/YukiFujisawa/auto-scoring-tool.git
+
+bundle install
+yarn install
+rails db:migrate:reset RAILS_ENV=development
+rails s -d
+cd auto-scoring-tool
+./gradlew test --tests suite.FacelookSuite -Psite=Facelook
+pkill -f 'puma'
 ```
 
 ## Usage
 
+* DockerでPostgres起動
+
 ```bash
-$ docker-compose start
-$ ./gradlew test --tests suite.GebishSuite -Psite=Gebish
-$ ./gradlew test --tests suite.FacelookSuite -Psite=Facelook
-$ docker-compose end
+$ docker-compose up -d
+```
+
+* Jenkinsテストjob実行
+
+* Jenkins停止
+
+```bash
+$ brew services stop jenkins
 ```
 
 ## tools
 
-* Jenkins
-
-http://0.0.0.0:18080/
-
 * Adminer
 
-http://0.0.0.0:8080/
+http://0.0.0.0:18080/
 admin / admin
