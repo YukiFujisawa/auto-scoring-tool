@@ -18,3 +18,10 @@ services:
       - 8080:8080
     depends_on:
       - db
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:latest
+    ports:
+      - 18080:8080
+    volumes:
+      - ./docker/jenkins:/var/jenkins_home
