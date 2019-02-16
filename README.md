@@ -62,4 +62,5 @@ $ brew services stop jenkins
 * Adminer
 
 http://0.0.0.0:18080/
+
 admin / admin

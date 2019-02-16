@@ -57,13 +57,11 @@ class FacelookBasicSpec extends GebReportingSpec {
     then: "ユーザー詳細画面に遷移すること"
     waitFor { at FacelookUsersShowPage }
 
-    when: "トップページ：退会リンクをクリック"
-    to FacelookTopPage
+    when: "会員詳細：退会リンクをクリック"
     headerMenu.quitLink.click()
 
     and: "ログインページに遷移してログイン処理した場合"
-    headerMenu.loginLink.click()
-    waitFor { at FacelookLoginPage }
+    to FacelookLoginPage
     emailInput = userDefault.email
     passwordInput = userDefault.password
     submitButton.click()
